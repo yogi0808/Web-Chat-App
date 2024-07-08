@@ -31,7 +31,7 @@ Follow these steps to get the application up and running on your local machine.
 2. Install dependencies:
 
    ```bash
-       npm install
+   npm install
    ```
 
 3. Set up Firebase:
