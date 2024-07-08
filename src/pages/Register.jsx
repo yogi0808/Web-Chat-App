@@ -23,7 +23,7 @@ const Register = () => {
       if (password.length < 6 || confPassword.length < 6)
         return toast.error("Password must be at last 6 characters.")
 
-      if (avatar || !fullName || !email || !password || !confPassword)
+      if (!avatar || !fullName || !email || !password || !confPassword)
         return toast.error("Please fill in all fields")
 
       if (password !== confPassword)
