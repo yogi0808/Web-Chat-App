@@ -15,6 +15,7 @@ export const ChatContextProvider = ({ children }) => {
   const [isCurrentUserBlocked, setIsCurrentUserBlocked] = useState(false)
   const [isReceiverBlocked, setIsReceiverBlocked] = useState(false)
   const [conversations, setConversations] = useState([])
+  const [filteredConversations, setFilteredConversations] = useState([])
 
   // Changing add adding Chats
   const changeChat = (chatId, user) => {
@@ -58,6 +59,8 @@ export const ChatContextProvider = ({ children }) => {
         setIsReceiverBlocked,
         isCurrentUserBlocked,
         setIsCurrentUserBlocked,
+        filteredConversations,
+        setFilteredConversations,
         conversations,
         setConversations,
         changeChat,

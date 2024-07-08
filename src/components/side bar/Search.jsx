@@ -1,22 +1,23 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 // Files
 import SearchSvg from "../../svgs/SearchSvg"
 import PlushSvg from "../../svgs/PlushSvg"
+import { useChatContext } from "../../context/chatContext"
 
 const Search = () => {
   const [search, setSearch] = useState("")
-  // const { conversations, setConversations } = useChatContext()
+  const { conversations, setFilteredConversations } = useChatContext()
 
-  // const filteredConversations = conversations.filter((c) =>
-  //   c.user.fullName.toLowerCase().includes(search.toLowerCase())
-  // )
+  const filteredConversations = conversations.filter((c) =>
+    c.user.fullName.toLowerCase().includes(search.toLowerCase())
+  )
 
-  // console.log(filteredConversations)
-  // useEffect(() => {
-  //   setConversations(filteredConversations)
-  // }, [search])
+  console.log(filteredConversations)
+  useEffect(() => {
+    setFilteredConversations(filteredConversations)
+  }, [search])
 
   return (
     <div className="relative py-3 mx-2 flex items-center gap-3">

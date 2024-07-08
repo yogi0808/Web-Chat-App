@@ -8,7 +8,7 @@ import { useChatContext } from "../../context/chatContext"
 import useGetConversations from "../../hooks/useGetConversations"
 
 const Conversations = () => {
-  const { conversations } = useChatContext()
+  const { conversations, filteredConversations } = useChatContext()
 
   const { loading, getConversations } = useGetConversations()
   const { selectChat } = useSelectChat()
@@ -28,8 +28,18 @@ const Conversations = () => {
         </div>
       ) : conversations <= 0 ? (
         <p className="text-center text-w-3/40 mt-4">Don't have Friend yet!</p>
-      ) : (
+      ) : filteredConversations.length <= 0 ? (
         conversations.map((item) => (
+          <div
+            key={item.chatId}
+            // Selecting Chat using Custom hook
+            onClick={() => selectChat(item)}
+          >
+            <Conversation chat={item} />
+          </div>
+        ))
+      ) : (
+        filteredConversations.map((item) => (
           <div
             key={item.chatId}
             // Selecting Chat using Custom hook
