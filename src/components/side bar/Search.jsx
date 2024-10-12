@@ -14,7 +14,6 @@ const Search = () => {
     c.user.fullName.toLowerCase().includes(search.toLowerCase())
   )
 
-  console.log(filteredConversations)
   useEffect(() => {
     setFilteredConversations(filteredConversations)
   }, [search])

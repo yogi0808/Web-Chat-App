@@ -28,13 +28,13 @@ Follow these steps to get the application up and running on your local machine.
    cd Web-Chat-App
    ```
 
-2. Install dependencies:
+2. **Install dependencies:**
 
    ```bash
    npm install
    ```
 
-3. Set up Firebase:
+3. **Set up Firebase:**
 
    Go to the Firebase console and create a new project.
    Enable Authentication and Firestore in the Firebase console.
@@ -52,7 +52,7 @@ Follow these steps to get the application up and running on your local machine.
    VITE_FIREBASE_APP_ID=your_app_id
    ```
 
-4. Start the application:
+4. **Start the application:**
 
    ```bash
    npm run dev
